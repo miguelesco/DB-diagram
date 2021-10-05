@@ -54,3 +54,6 @@ CREATE TABLE medical_treatments(
     FOREIGN KEY(medical_histories_id) REFERENCES medical_histories(id);
     FOREIGN KEY(treatments_id) REFERENCES treatments(id);
 );
+
+CREATE INDEX medical_histories_id_asc ON medical_treatments(medical_histories_id ASC);
+CREATE INDEX treatments_id_asc ON medical_treatments(treatments_id ASC);
