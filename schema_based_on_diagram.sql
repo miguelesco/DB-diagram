@@ -36,3 +36,14 @@ CREATE TABLE treatments(
 	name varchar(80),
 	PRIMARY KEY(id)
 );
+
+CREATE TABLE invoices_items(
+    id INT GENERATED ALWAIS AS IDENTITY,
+    unit_price decimal,
+    quantity int,
+    total_price decimal,
+    invoice_id int,
+    treatment_id int,
+    FOREIGN KEY(treatment_id) REFERENCES treatments(id);
+    FOREIGN KEY(invoice_id) REFERENCES invoices(id);
+);
